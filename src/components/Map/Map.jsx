@@ -20,8 +20,10 @@ const Map = ({setCoordinates,setBoundaries,coordinates}) => {
                 margin={[50,50,50,50]}
                 options={''}
                 onChange={(e) => {
+                    console.log('onchange')
+                    console.log(e)
                     setCoordinates({lat: e.center.lat, lng: e.center.lng })
-                    setBoundaries({ne: e.marginBounds.ne, sw: e.marginBounds.sw, })
+                    setBoundaries({ne: e.marginBounds.ne, sw: e.marginBounds.sw })
                 }}
                 onChildClick={''}
             >

@@ -18,12 +18,17 @@ const App = () => {
     },[])
 
     useEffect(() => {
-      console.log(coordinates, boundaries);
-      getPlacesData()
+      if (boundaries && coordinates) {
+        console.log('coordinates')
+        console.log(coordinates)
+        console.log('boundaries')
+        console.log(boundaries);
+        getPlacesData(boundaries.sw,boundaries.ne)
         .then((data) => {
           console.log(data);
           setPlaces(data);
         })
+      }
     },[coordinates, boundaries]);
 
     return (
