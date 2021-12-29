@@ -17,6 +17,12 @@ const PlaceDetails = ({place}) => {
             />
             <CardContent>
                 <Typography gutterBottom variant='h5'>{place.name}</Typography>
+                {(place.rating && place.num_reviews) && (
+                    <Box display="flex" justifyContent="space-between">
+                        <Rating value={Number(place.rating)} readOnly/>
+                        <Typography gutterBottom variant="subtitle1">Out of {place.num_reviews} Reviews</Typography>
+                    </Box>
+                )}
                 {place.price_level && (
                     <Box display="flex" justifyContent="space-between">
                         <Typography variant="subtitle1">Price</Typography>
