@@ -12,7 +12,7 @@ const options = {
     },
     headers: {
       'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
-      'x-rapidapi-key': '649d26e0e7msh9d3b527717761edp139df8jsn9fd1f46c21e9'
+      'x-rapidapi-key': ''
     }
   };
   */
