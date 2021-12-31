@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Chip} from '@material-ui/core';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
@@ -6,11 +6,22 @@ import Rating from '@material-ui/lab/Rating';
 
 import useStyles from './styles';
 
-const PlaceDetails = ({place}) => {
+const PlaceDetails = ({place, selected, refProp}) => {
     const classes = useStyles();
+    const titleRef = useRef();
+    
+    if(selected) {
+        console.log('SELECTED')
+        console.log(selected);
+        console.log(refProp);
+        titleRef?.current?.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+    
+
     return (
         <Card elevation={6}>
             <CardMedia 
+                ref={titleRef}
                 style={{height: 350}}
                 image={place.photo ? place.photo.images.large.url : 'http://www.greatwallbedford.com/wp-content/uploads/2012/11/take-out-lexington-copy-3.jpg'}
                 title={place.name}
