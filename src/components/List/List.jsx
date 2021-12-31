@@ -51,9 +51,11 @@ const List = ({places, childClicked, isLoading, type, setType, rating, setRating
                     setRating(e.target.value);
                 }}>
                     <MenuItem value={0}>All</MenuItem>
-                    <MenuItem value={3}>Above 3.0</MenuItem>
-                    <MenuItem value={4}>Above 4.0</MenuItem>
-                    <MenuItem value={4.5}>Above 4.5</MenuItem>
+                    <MenuItem value={2}>At or Above 2.0 Stars</MenuItem>
+                    <MenuItem value={3}>At or Above 3.0 Stars</MenuItem>
+                    <MenuItem value={4}>At or Above 4.0 Stars</MenuItem>
+                    <MenuItem value={4.5}>At or Above 4.5 Stars</MenuItem>
+                    <MenuItem value={5}>At 5.0 Stars</MenuItem>
                 </Select>
             </FormControl>
             <Grid container spacing={3} className={classes.list}>
