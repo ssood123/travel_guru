@@ -6,25 +6,6 @@ import PlaceDetails from '../PlaceDetails/PlaceDetails';
 const List = ({places, childClicked, isLoading, type, setType, rating, setRating}) => {
     const classes = useStyles();
     const [elRefs, setElRefs] = useState([]);
-    console.log('childClicked')
-    console.log({childClicked});
-    console.log("PLACES")
-    console.log(places);
-
-   
-    /*
-   useEffect(() => {
-    console.log(places);
-    const refs = Array(places?.length).fill().map((_,i) => elRefs[i] || createRef());
-
-    console.log('REFS')
-    console.log(refs);
-    setElRefs(refs);
-   },[places]);
-   */
-   
-   
-
 
     return (
         <div className={classes.container}>

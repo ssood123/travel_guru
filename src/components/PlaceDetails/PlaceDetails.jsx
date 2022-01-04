@@ -11,9 +11,6 @@ const PlaceDetails = ({place, selected, refProp}) => {
     const titleRef = useRef();
     
     if(selected) {
-        console.log('SELECTED')
-        console.log(selected);
-        console.log(refProp);
         titleRef?.current?.scrollIntoView({behavior: "smooth", block: "start"});
     }
     
