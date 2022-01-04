@@ -30,16 +30,17 @@ const App = () => {
     },[rating])
 
     useEffect(() => {
-      if (boundaries && coordinates) {
+      if (boundaries.sw && boundaries.ne) {
         setIsLoading(true);
         getPlacesData(type, boundaries.sw,boundaries.ne)
         .then((data) => {
+          data = data.filter(place => place.name && place.num_reviews > 0)
           setPlaces(data);
           setFilteredPlaces([]);
           setIsLoading(false);
         })
       }
-    },[type, coordinates, boundaries]);
+    },[type, boundaries]);
 
 
     return (
